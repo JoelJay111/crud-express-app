@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supabase Todos</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel">
+        <div class="header">
+          <div>
+            <p class="eyebrow">Express + Supabase</p>
+            <h1>Todos</h1>
+          </div>
+          <span id="todo-count" class="count">0</span>
+        </div>
+
+        <form id="todo-form" class="todo-form">
+          <input id="title" type="text" placeholder="Add a task" autocomplete="off" required />
+          <textarea id="description" placeholder="Optional details" rows="2"></textarea>
+          <button type="submit">Add Todo</button>
+        </form>
+
+        <p id="status" class="status" role="status"></p>
+        <ul id="todo-list" class="todo-list"></ul>
+      </section>
+    </main>
+
+    <template id="todo-template">
+      <li class="todo-item">
+        <label class="todo-check">
+          <input type="checkbox" />
+          <span></span>
+        </label>
+        <div class="todo-content">
+          <input class="edit-title" type="text" />
+          <textarea class="edit-description" rows="2"></textarea>
+        </div>
+        <div class="todo-actions">
+          <button type="button" class="save">Save</button>
+          <button type="button" class="delete">Delete</button>
+        </div>
+      </li>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
