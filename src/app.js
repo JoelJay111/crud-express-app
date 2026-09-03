@@ -15,6 +15,14 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
+app.get('/api-docs', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'api-docs.html'));
+});
+
+app.get('/swagger.yaml', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'swagger.yaml'));
+});
+
 app.get('/api/todos', async (req, res, next) => {
   try {
     const { data, error } = await getSupabase()
